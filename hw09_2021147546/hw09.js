@@ -196,7 +196,7 @@ function render() {
   stats.update();
   orbitControls.update();
 
-  MercuryMesh.rotation.y += rotations[0] - orbits[0];
+  MercuryMesh.rotation.y += rotations[0] - orbits[0]; //자전 - 공전으로 달과 같은 조석 고정, 동주기 자전으로 보이는 현상을 없앰
   VenusMesh.rotation.y += rotations[1] - orbits[1];
   EarthMesh.rotation.y += rotations[2] - orbits[2];
   MarsMesh.rotation.y += rotations[3] - orbits[3];
@@ -215,3 +215,4 @@ window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 });
+
